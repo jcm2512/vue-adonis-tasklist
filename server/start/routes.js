@@ -18,4 +18,8 @@ const Route = use('Route')
 
 Route.on('/').render('welcome')
 
-Route.post('auth/register', 'UserController.register');
+Route.group(()=>
+{
+    Route.post('auth/register', 'UserController.register');
+})
+.prefix('api');
