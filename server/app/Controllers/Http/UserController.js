@@ -1,11 +1,17 @@
 'use strict'
 
+const User = use('App/Models/User');
 
 class UserController {
-    register(){
-        return {
-            message: 'Hello Adonis',
-        };
+    async register( {request} ){
+        const {email, password} = request.all();
+        console.log(email, password)
+        const user = await User.create({
+            email,
+            password,
+            username: email,
+        });
+        return user;
     } 
 }
 
