@@ -17,3 +17,9 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+
+Route.post('auth/register', ({ request }) => {
+    return {
+        message: 'Hello World',
+    };
+});
