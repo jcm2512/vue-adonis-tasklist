@@ -1,3 +1,5 @@
+import 'vuetify/dist/vuetify.min.css';
+
 import { sync } from 'vuex-router-sync';
 import Vuetify from 'vuetify';
 
@@ -12,6 +14,7 @@ sync(store, router);
 Vue.use(Vuetify);
 
 new Vue({
+  vuetify: new Vuetify(),
   router,
   store,
   render: (h) => h(App),
